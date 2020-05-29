@@ -117,6 +117,7 @@ public class ClinicaVeterinaria {
 		int indiceM = 0;
 		System.out.println("Introduce el tipo de mascota");
 		System.out.println("1. Cerdo");
+		System.out.println("2. Gato");
 		try {
 		    indiceM = Integer.parseInt(teclado.readLine());
 		} catch (IOException e) {
@@ -127,9 +128,10 @@ public class ClinicaVeterinaria {
 		}
 
 		Mascota m1;
+		float peso;
 		switch (indiceM) {
 		    case 1:
-		        float peso = 0.0f;
+		        peso = 0.0f;
 		        System.out.println("Introduce el peso del cerdo o la cerda");
 		        try {
 		            peso = Float.parseFloat(teclado.readLine());
@@ -139,6 +141,18 @@ public class ClinicaVeterinaria {
 		        }
 		        m1 = new Cerdo(nombre, edad, raza, p2, peso);
 		        break;
+		    case 2:
+		    	peso = 0.0f;
+		        System.out.println("Introduce el peso del gato o la gata");
+		        try {
+		            peso = Float.parseFloat(teclado.readLine());
+		        } catch (Exception e) {
+		            System.err.println("Has causado una excepción porque no has entrado un número entero, gracias");
+		            return;
+		        }
+		        m1 = new Cerdo(nombre, edad, raza, p2, peso);
+		        break;
+		    	
 		    default:
 		        m1 = new Mascota(nombre, edad, raza, p2);
 		        break;
